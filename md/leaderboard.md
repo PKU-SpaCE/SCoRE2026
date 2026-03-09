@@ -3,7 +3,7 @@
 
 ## 🏆 排行榜
 
-<p class="text-center">最后更新于<strong>2025年5月31日</strong></p>
+<p class="text-center">最后更新于<strong>2026年3月9日</strong></p>
 
 <p>注：仅综合得分作为比赛排名依据。</p>
 
