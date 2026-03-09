@@ -309,34 +309,6 @@ SCoRE数据集中的所有题目包含中英两个版本，中文题和英文题
 
 
 
-
-
-
-
-
-[中文样例]
-"text": "王处一、谭处端、丘处机、刘处玄、王重阳、周伯通六位道士在终南山重阳宫内盘腿席地打坐，围成一个圆圈，修炼内功，六人的位置恰好形成一个正六边形。六人都面朝外背对圆心而坐。任意相邻两人之间的间距相等，大约为一米。已知：丘处机在王处一顺时针方向第一个位置，谭处端在刘处玄右边数起第三个位置，谭处端在王重阳顺时针方向第二个位置，周伯通的右边接着就是谭处端，王处一的右边起第三个就是王重阳。"
-"question": "周伯通在___左侧范围内。",
-"options": {
-            "A": "王处一",
-            "B": "刘处玄",
-            "C": "丘处机",
-            "D": "以上选项都不是"
-        }
-"answer": ["A"]
-
-[英文样例]
-"text": "Robert, Mary, Patricia, John, James, David, —these six Taoist priests are seated cross-legged on the ground inside the Chongyang Palace on Zhongnan Mountain, arranged in a circle as they practice internal martial arts. The positions of the six priests form a perfect hexagon. Each priest is facing outward, with their backs toward the center of the circle. The distance between any two adjacent priests is equal, approximately one meter. It is known that: Patricia occupies the first position clockwise from Robert; Mary occupies the third position to the right of John; Mary occupies the second position clockwise from James; Mary is directly to the right of David; James occupies the third position to the right of Robert. ",
-"question": "David is situated in the area to ___'s left."
-"options": {
-     "A": "Robert",
-     "B": "John",
-     "C": "Patricia",
-     "D": "None of the above"
-     }
-"answer": ["A"]
-
-
 #### 2.3  <span id="distribution">数据概况</span>
 
 本数据集提供的训练集和验证集共计6800题。具体分布如下表所示：
