@@ -296,7 +296,7 @@ const RootComponent = {
             <div class="col">
               <div class="rounded overflow-hidden py-4" style="border: 1px var(--pku-red) solid; color: var(--pku-red); --background:#4188bb;">
                 <div class="h1 fw-bold m-0 p-0">SCoRE2026</div>
-                <div>第一届常识推理评测</div>
+                <div>第一届基于情景的常识推理评测</div>
               </div>
             </div>
           </div>
@@ -322,7 +322,7 @@ const RootComponent = {
         </main>
       </div>
       <footer class=" text-center --rounded overflow-hidden py-5 text-light" style="border: 1px var(--pku-red) solid; background:var(--pku-red);">
-        <p class="small fw-bold"><a class="text-decoration-none text-light" href="https://2030nlp.github.io/SCoRE2026">第一届常识推理评测  SCoRE2026</a></p>
+        <p class="small fw-bold"><a class="text-decoration-none text-light" href="https://2030nlp.github.io/SCoRE2026">第一届基于情景的常识推理评测  SCoRE2026</a></p>
         <!--<p class="small">主办单位： <a class="text-decoration-none text-light" href="https://www.pku.edu.cn" target="_blank">北京大学</a></p>-->
         <p class="small"><a class="text-decoration-none text-light" href="https://chinese.pku.edu.cn/" target="_blank">北京大学中文系</a></p>
         <p class="small"><a class="text-decoration-none text-light" href="http://ccl.pku.edu.cn/" target="_blank">北京大学中国语言学研究中心</a></p>

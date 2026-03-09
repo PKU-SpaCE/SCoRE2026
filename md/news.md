@@ -3,7 +3,7 @@
 
 ## 📮 最新消息
 
-<p class="text-center">本页面用于发布关于 <strong>第一届常识推理评测<small>（SCoRE2026）</small></strong> 的最新消息，<br/><span style="color:var(--notice-red)"><strong>请各位参赛者保持关注本页面，了解评测最新动态和要求</strong></span>，谢谢!</p>
+<p class="text-center">本页面用于发布关于 <strong>第一届基于情景的常识推理评测<small>（SCoRE2026）</small></strong> 的最新消息，<br/><span style="color:var(--notice-red)"><strong>请各位参赛者保持关注本页面，了解评测最新动态和要求</strong></span>，谢谢!</p>
 
 <!--
 <br/>

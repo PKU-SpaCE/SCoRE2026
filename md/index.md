@@ -1,4 +1,4 @@
-# <center>第一届常识推理评测任务（SCoRE2026）</center>
+# <center>第一届基于情景的常识推理评测任务（SCoRE2026）</center>
 
 **[<center>👉 <font style=color:rgb(226,76,71)>点我立即报名</font> 👈</center>](https://docs.qq.com/form/page/DVURKQ3NGcmtEZmxu)**
 
@@ -24,7 +24,7 @@
 #### 1.1  任务简介
 
 推理是一种高级认知功能，涉及基于现有知识对新信息进行分析、归纳和演绎。它在人类智能中起着基础性作用。虽然以往的基准测试主要侧重于评估大语言模型（LLMs）在复杂、专业领域内的推理能力，但它们往往忽视了类人认知的一个关键方面：常识推理。评估大型语言模型中的这种常识推理能力对于人工智能的发展至关重要。这种基本能力显著影响着 LLMs 在日常情境中的决策，并且对于在通用人工智能（AGI）中迈向类人智能至关重要。
-为了全方位、细粒度地诊断大模型的常识推理能力，我们提出了基于情景的常识推理评测数据集(Scenario-based Commonsense Reasoning Evaluation, SCoRE)，用以评估大语言模型在常识场景下的复杂逻辑推理能力。根据所涉及的常识领域，该数据集包含的任务可分为以下五类：
+为了全方位、细粒度地诊断大模型的常识推理能力，我们提出了基于情景的基于情景的常识推理评测数据集(Scenario-based Commonsense Reasoning Evaluation, SCoRE)，用以评估大语言模型在常识场景下的复杂逻辑推理能力。根据所涉及的常识领域，该数据集包含的任务可分为以下五类：
 （1）空间常识推理：给定一个空间场景和若干已知的实体间方位关系，本任务要求机器推理出实体在空间场景中的位置，以及未知的方位关系。
 （2）时间常识推理：给定一个包含若干事件的时间叙述场景和已知的事件间时间关系（如先后顺序、持续时长、相对或绝对时间点），本任务要求机器推理出事件在时间轴上的具体时刻，以及未知的事件间时间跨度或次序关系。
 （3）社会常识推理：给定一个社会交互场景和若干已知的人物间人际关系（如亲属、职场、朋友或师徒关系），本任务要求机器推理出人物在社会网络中的具体角色或地位，以及人物间隐含的或未知的社会关系。
@@ -401,7 +401,7 @@ ACC = 命中正确答案的比赛题数 / 比赛题目总数
 
 ### <center>6.  <span id="otherinfo">报名方式</span></center>
 
-请仔细阅读《[第一届常识推理评测 SCoRE2026 参赛协议](https://github.com/PKU-SpaCE/SCoRE2026/tree/main/agreements/Agreement.md)》和《[第一届常识推理评测 SCoRE2026 数据集使用许可](https://github.com/PKU-SpaCE/SCoRE2026/tree/main/agreements/LICENSE.md)》，然后点击进入 [报名链接](https://docs.qq.com/form/page/DVURKQ3NGcmtEZmxu)
+请仔细阅读《[第一届基于情景的常识推理评测 SCoRE2026 参赛协议](https://github.com/PKU-SpaCE/SCoRE2026/tree/main/agreements/Agreement.md)》和《[第一届基于情景的常识推理评测 SCoRE2026 数据集使用许可](https://github.com/PKU-SpaCE/SCoRE2026/tree/main/agreements/LICENSE.md)》，然后点击进入 [报名链接](https://docs.qq.com/form/page/DVURKQ3NGcmtEZmxu)
 
 ### <center>7.  <span id="rules">评测委员会</span></center>
 
