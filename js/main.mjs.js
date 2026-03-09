@@ -247,7 +247,7 @@ const RootComponent = {
         // console.log(wrap);
         localData.mdContent = mkd.parse(wrap);
         await updateHLJS();
-        document.title = `SpaCE2025 | ${pages[localData.pageName].title}`;
+        document.title = `SCoRE2026 | ${pages[localData.pageName].title}`;
       } catch (error) {
         throw error;
         return;
@@ -322,7 +322,7 @@ const RootComponent = {
         </main>
       </div>
       <footer class=" text-center --rounded overflow-hidden py-5 text-light" style="border: 1px var(--pku-red) solid; background:var(--pku-red);">
-        <p class="small fw-bold"><a class="text-decoration-none text-light" href="https://2030nlp.github.io/SpaCE2025">第一届常识推理评测  SpaCE2025</a></p>
+        <p class="small fw-bold"><a class="text-decoration-none text-light" href="https://2030nlp.github.io/SCoRE2026">第一届常识推理评测  SCoRE2026</a></p>
         <!--<p class="small">主办单位： <a class="text-decoration-none text-light" href="https://www.pku.edu.cn" target="_blank">北京大学</a></p>-->
         <p class="small"><a class="text-decoration-none text-light" href="https://chinese.pku.edu.cn/" target="_blank">北京大学中文系</a></p>
         <p class="small"><a class="text-decoration-none text-light" href="http://ccl.pku.edu.cn/" target="_blank">北京大学中国语言学研究中心</a></p>

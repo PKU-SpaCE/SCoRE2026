@@ -1,407 +1,396 @@
-# <center>第五届空间语义理解评测任务（SpaCE2025）</center>
+# <center>第一届常识推理评测任务（SCoRE2026）</center>
 
-**[<center>👉 <font style=color:rgb(226,76,71)>点我立即报名</font> 👈</center>](https://docs.qq.com/form/page/DSWpBdE9FUWFOUkZa)**
+**[<center>👉 <font style=color:rgb(226,76,71)>点我立即报名</font> 👈</center>](https://docs.qq.com/form/page/DVURKQ3NGcmtEZmxu)**
 
 - 组织者/主席：詹卫东、穗志方
-- 工作人员：肖力铭，胡楠，秦宇航，邓思锐，崔香，蔡奇栩，姜秀旻，丁锦坤，张子涵，王希豪，孙春晖，邢丹，杨奕欣，马敬原，李政，王悦
+- 工作人员：胡楠，肖力铭，秦宇航，邓思锐，崔香，蔡奇栩，姜秀旻，丁锦坤，张子涵，王希豪，孙春晖，邢丹，杨奕欣，马敬原，李政，王悦
 - 主办单位：北京大学 
-- 联系方式：[lmxiao@stu.pku.edu.cn]()
-- 项目信息：本课题得到2022年度教育部人文社会科学重点研究基地重大项目“面向机器语言能力评测的综合型语言知识库研究”（项目批准号：22JJD740004）资助
+- 联系方式：[hunan@stu.pku.edu.cn]()
 
 
 > - <a href="#content">任务内容</a>
 > - <a href="#data">评测数据</a>
->     - <a href="#ziduan">数据字段</a>
->     - <a href="#example">数据样例</a>
+>     - <a href="#data_form">数据字段</a>
+>     - <a href="#samples">数据样例</a>
 >     - <a href="#distribution">数据概况</a>
 > - <a href="#eval">评价标准</a>
 > - <a href="#time">评测赛程</a>
 > - <a href="#award">奖项设置</a>
 > - <a href="#otherinfo">其他信息</a>
-> - <a href="#rules">赛事规则</a>
+> - <a href="#rules">评测委员会</a>
 
 ### <center>1.  <span id="content">任务内容</span></center>
 
 #### 1.1  任务简介
 
-空间表达描述了物体之间的空间方位关系，是自然语言中的高频现象。实现空间语义理解不仅依赖语言知识，还需要调用空间认知能力，准确构建文本表征的空间场景。空间语义理解评测（Spatial Cognition Evaluation，简称 SpaCE）以测试机器的空间语义理解水平为目标，自2021年开始连续举办了四届赛事1，发布了一系列评测任务，包括（1）空间信息正误判断；（2）空间信息异常识别；（3）空间参照实体识别；（4）空间语义角色识别；（5）空间异形同义判别；（6）空间方位关系推理，等等。大语言模型在SpaCE2024的评测结果显示，大语言模型的空间语义理解水平与普通人类的平均水平相比，在对空间认知加工要求较高的任务上，存在较大差距。空间语义理解对大语言模型来说仍然是一项挑战性任务。 
-
-第五届空间语义理解评测（SpaCE2025）继续开展针对大语言模型的空间语义理解能力测试，关注大语言模型的空间语言能力和空间推理能力。
-
-- **空间语言能力类评测任务**，包括三个子任务：
-
-（1）空间信息正误判断。判断题。空间信息正确的文本可以构造出合乎常理的空间场景，而错误的文本不能，本任务要求机器判断文本的空间信息是否正确。回答“正确”或“错误”。
-
-（2）空间参照实体判断。判断题。确定实体方位依赖参照物，但文本中存在方位词前省略参照物的现象，本任务给出可能在句子中充当参照物的实体，要求机器判断该实体是否是正确的参照物。回答“正确”或“错误”。
-
-（3）空间异形同义判断。判断题。两个有方位词语差异的空间表达存在描述相同空间场景的可能，有异形同义和异形异义两种情况，本任务要求机器判断两个文本描述的空间场景是相同还是不同。回答“相同”或“不同”。
-
-- **空间推理能力类评测任务**，包括两个子任务：
-
-（1）中文空间方位关系推理。选择题。给定一个空间场景和若干已知的实体间方位关系，本任务要求机器在中文文本中推理出实体在空间场景中的位置，以及未知的方位关系。
-
-（2）英文空间方位关系推理。选择题。与中文推理文本对照的英文文本，要求机器在英文文本中推理出实体在空间场景中的位置，以及未知的方位关系。
-
-
-#### 1.2  与SpaCE2024的比较
-
- SpaCE2025 与 SpaCE2024 相比，有以下变化和特色： 
-
-（1）舍弃依赖语言形式标记作答的评测任务。根据SpaCE2024的评测结果，大语言模型在形式特征明显、形义对应关系简单的语义角色识别任务上已经达到了与人类相当的水平，但在需要调动认知能力进行深层语义理解的任务上，仍然有较大的提升空间。为了进一步了解大语言模型的空间认知能力，SpaCE2025专注于具有较高认知加工难度的评测任务。 
-
-（2）提升评测数据的多样性和平衡性。为了更加全面、准确地评估大语言模型的空间语义理解能力，SpaCE2025覆盖了过去未曾考察的空间表达，并提升了数据规模，确保不同考察项目的题量分布更加均衡，力求使评测结果具有统计意义。 
-
-（3）关注跨语言的空间推理能力。SpaCE2025在空间方位关系推理任务中提供中英文对照的评测数据，旨在考察大语言模型的空间推理能力是否具有语言相关性，同时探索语言能力与推理能力之间的关系。 
-
-> 第一届中文空间语义理解评测（SpaCE2021）
-> - 评测网站： http://ccl.pku.edu.cn:8084/SpaCE2021/
-> 
-> 第二届中文空间语义理解评测（SpaCE2022）
-> - 评测网站： https://2030nlp.github.io/SpaCE2022/
-> 
-> 第三届中文空间语义理解评测（SpaCE2023）
-> - 评测网站： https://2030nlp.github.io/SpaCE2023/
->
-> 第四届中文空间语义理解评测（SpaCE2024）
-> - 评测网站： https://2030nlp.github.io/SpaCE2024/
-
+推理是一种高级认知功能，涉及基于现有知识对新信息进行分析、归纳和演绎。它在人类智能中起着基础性作用。虽然以往的基准测试主要侧重于评估大语言模型（LLMs）在复杂、专业领域内的推理能力，但它们往往忽视了类人认知的一个关键方面：常识推理。评估大型语言模型中的这种常识推理能力对于人工智能的发展至关重要。这种基本能力显著影响着 LLMs 在日常情境中的决策，并且对于在通用人工智能（AGI）中迈向类人智能至关重要。
+为了全方位、细粒度地诊断大模型的常识推理能力，我们提出了基于情景的常识推理评测数据集(Scenario-based Commonsense Reasoning Evaluation, SCoRE)，用以评估大语言模型在常识场景下的复杂逻辑推理能力。根据所涉及的常识领域，该数据集包含的任务可分为以下五类：
+（1）空间常识推理：给定一个空间场景和若干已知的实体间方位关系，本任务要求机器推理出实体在空间场景中的位置，以及未知的方位关系。
+（2）时间常识推理：给定一个包含若干事件的时间叙述场景和已知的事件间时间关系（如先后顺序、持续时长、相对或绝对时间点），本任务要求机器推理出事件在时间轴上的具体时刻，以及未知的事件间时间跨度或次序关系。
+（3）社会常识推理：给定一个社会交互场景和若干已知的人物间人际关系（如亲属、职场、朋友或师徒关系），本任务要求机器推理出人物在社会网络中的具体角色或地位，以及人物间隐含的或未知的社会关系。
+（4）自然常识推理：给定一组自然物体（或实体）和若干已知的属性约束条件（如类别归属、物理性状、功能用途或感官特征），本任务要求机器推理出物体与描述（或位置）的一一对应关系，以及物体未知的属性或分类特征。
+（5）融合常识推理：融合领域任务描述旨在构建一个多维度条件交织的推理问题。它要求机器同时处理来自空间、时间、自然属性及社会关系等多个领域的约束与常识，并建立统一的推理模型以进行协同分析与决策。其核心挑战在于，单一领域的逻辑链条不足以解决问题，必须识别并整合不同领域的隐含联系，才能对复杂多因素情境进行有效推断。
 
 ### <center>2.  <span id="data">评测数据</span></center>
 
-#### 2.1  <span id="task1">空间信息正误判断</span>
+#### 2.1  <span id="data_form">数据字段</span>
 
-##### 2.1.1  <span id="ziduan">数据字段</span>
+（1）text：文本材料。字符串。机器需要阅读理解 text 后回答问题。
+（2）question：机器需要回答的问题。字符串。形式上是一个句中有下划线的陈述句。
+（3）option：题目选项。字典，键-值对为“选项字母-选项内容”。最少有两个键-值对，
+最多有四个键-值对。选项字母为 A、B、C、D。
+（4）answer：题目答案。数组，元素是选项字母。例如，["A"]表示机器选择 option 的
+A 选项作为答案。测试集没有 answer 字段。
+#### 2.2  <span id="samples">数据样例</span>
+SCoRE数据集中的所有题目包含中英两个版本，中文题和英文题除了实体的名称不同，其选项、问题和答案均为一一对应关系。
 
-id：题目编号。每道题目都有唯一的编号，形如“jsi-数据集-数字”。jsi为任务英文judging spatial information的缩写，demo和test分别代表示例集和测试集。
+##### 2.2.1  <span id="task_space">空间常识推理任务</span>
+中文样例
+"text": "王处一、谭处端、丘处机、刘处玄、王重阳、周伯通六位道士在终南山重阳宫内盘腿席地打坐，围成一个圆圈，修炼内功，六人的位置恰好形成一个正六边形。六人都面朝外背对圆心而坐。任意相邻两人之间的间距相等，大约为一米。已知：丘处机在王处一顺时针方向第一个位置，谭处端在刘处玄右边数起第三个位置，谭处端在王重阳顺时针方向第二个位置，周伯通的右边接着就是谭处端，王处一的右边起第三个就是王重阳。"
+"question": "周伯通在___左侧范围内。",
+"options": {
+            "A": "王处一",
+            "B": "刘处玄",
+            "C": "丘处机",
+            "D": "以上选项都不是"
+        }
+"answer": ["A"]
+英文样例
+"text": "Robert, Mary, Patricia, John, James, David, —these six Taoist priests are seated cross-legged on the ground inside the Chongyang Palace on Zhongnan Mountain, arranged in a circle as they practice internal martial arts. The positions of the six priests form a perfect hexagon. Each priest is facing outward, with their backs toward the center of the circle. The distance between any two adjacent priests is equal, approximately one meter. It is known that: Patricia occupies the first position clockwise from Robert; Mary occupies the third position to the right of John; Mary occupies the second position clockwise from James; Mary is directly to the right of David; James occupies the third position to the right of Robert. ",
+"question": "David is situated in the area to ___'s left."
+"options": {
+     "A": "Robert",
+     "B": "John",
+     "C": "Patricia",
+     "D": "None of the above"
+     }
+"answer": ["A"]
+【说明】
+题目构建了一个六人背对背围坐的情景，为了解答周伯通在哪些人的左侧范围内，需推知周伯通的右侧范围内有哪些人。根据已知信息可推知，按照顺时针方向，六人的排列分别是周伯通、谭处端、王处一、丘处机、刘处玄和王重阳。因此，在周伯通右侧范围内的是谭处端和王处一。答案为A：王处一。
 
-instruction：说明考题目标的引导语。仅供参考，参赛队伍可自行设计提示词。
 
-text：包含空间语言表达的文本材料。
 
-interpretation：空间信息正误判断结果的释义文本。仅供参赛队伍参考。测试集没有此字段。
+##### 2.2.2  <span id="task_time">时间常识推理任务</span>
 
-answer：对text的空间信息是否正确的判断结果。取值为“正确”或“错误”。
+中文样例
+"text": 
+"小明的女儿正在给朋友讲述父亲的一生: 
+(1)在第一届普利策奖颁发之前17年，他出生; 
+(2)他度过一生的时间比他上初中的时间长96年; 
+(3)他开始上小学是在IBM发布第一款个人电脑的74年前; 
+(4)他上小学一共6年; 
+(5)他开始上初中是在第一届普利策奖颁发的4年前; 
+(6)在他出生之后16年，他初中毕业; 
+(7)在他开始上初中的2年之后，他遇见未来的妻子; 
+(8)在他开始上初中的3年之后，他开始上高中; 
+(9)在他出生之后19年，他高中毕业; 
+(10)在1919年，他开始上大学; 
+(11)在他小学毕业之后11年，他大学毕业。",
+    "question": "在___之后15年，他遇见未来的妻子。",
+    "options": {
+            "A": "他出生",
+            "B": "他开始上小学",
+            "C": "他小学毕业",
+            "D": "以上选项均不符合题目要求"
+        },
+    "answer": ["A"],
+	英文样例
+"text": "Jack's daughter is telling her friends about the story of her father's life:
+(1)Jack was born 17 years before the first Pulitzer Prizes were announced; 
+(2)The total duration that Jack lived his life is 96 years longer than he studied in junior high school; 
+(3)Jack started elementary school 74 years before IBM released the first personal computer; 
+(4)Jack studied in elementary school and spent 6 years on it; 
+(5)Jack started junior high school 4 years before the first Pulitzer Prizes were announced; 
+(6)Jack graduated from junior high school 16 years after he was born; 
+(7)Jack met his future wife 2 years after he started junior high school; 
+(8)Jack started high school 3 years after he started junior high school; 
+(9)Jack graduated from high school 19 years after he was born; 
+(10)Jack started university in 1919; 
+(11)Jack graduated from university 11 years after he graduated from elementary school.",
+    "question": "Jack met his future wife 15 years after ___.",
+    "options": {
+            "A": "Jack was born",
+            "B": "Jack started elementary school",
+            "C": "Jack graduated from elementary school",
+            "D": "None of the options above meet the requirements of the question"
+        },
+    "answer": ["A"]
+【说明】由条件（1）和（5）可知，第一届普利策奖颁发于1917年，因此他出生于1900年（1917-17），开始上初中是在1913年（1917-4）。由条件（7）可知，遇见妻子的年份是开始上初中后2年，即1915年（1913+2）。因此，遇见妻子之前15年是1900年（1915-15），这正是他出生的年份。
 
-##### 2.1.2  <span id="ziduan">数据样例</span>
-
-```json
-{
-    id: jsi-demo-1
-    instruction: 判断text的空间语言表达是否正确。请只回答“正确”或“错误”。
-    text: 碰撞发生后，“VANMANILA”轮船长迅速跑去驾驶台左侧外部的桥翼查看情况，当班三副杰哈尔跟在后面看见“XIANGZHOU”轮甲板以下已没入水上，就迅速跑回驾驶台发布全船广播，船长回驾驶室见其在进行减速操作，下令恢复原速继续航行。
-    interpretation: 文本存在异常的空间表达：【没入水上】。“没入”指在水面之下，即水中，与“水上”矛盾。
-    answer: 错误
+##### 2.2.3  <span id="task_social">社会常识推理任务</span>
+中文样例
+"text": "已知：吴强是李晓静的弟子，也是钱静的下属。孙大伟是吴强的好哥们儿，也是钱静的男朋友。孙大伟是李晓静的师傅。赵伟是钱静的师傅。",
+"question": "以下选项正确的是___",
+"options": {
+        "A": "钱静的男朋友是钱静的下属的弟弟",
+        "B": "赵伟是孙大伟的女友的下属",
+        "C": "钱静的男朋友是钱静的下属的好哥们儿",
+        "D": "孙大伟的弟子是钱静的下属的领导"
+       }
+"answer": ["C"]
+英文样例
+"text": "Given: Wu Qiang is Li Xiaoqing's disciple, and also Qian Jing's subordinate. Sun Dawei is Wu Qiang's good buddy, and also Qian Jing's boyfriend. Sun Dawei is Li Xiaoqing's master. Zhao Wei is Qian Jing's master.",
+"question": "Which of the following options is correct?",
+"options": {
+"A": "Qian Jing's boyfriend is the younger brother of Qian Jing's subordinate.",
+"B": "Zhao Wei is the subordinate of Sun Dawei's girlfriend.",
+"C": "Qian Jing's boyfriend is the good buddy of Qian Jing's subordinate.",
+"D": "Sun Dawei's disciple is the leader of Qian Jing's subordinate."
 }
-```
+"answer": ["C"]
+【说明】
+根据给定的关系分析：钱静的男朋友是孙大伟。钱静的下属是吴强。孙大伟是吴强的好哥们儿。因此，选项C“钱静的男朋友是钱静的下属的好哥们儿”正确。
 
-#### 2.2  <span id="task2">空间参照实体判断</span>
+##### 2.2.4  <span id="task_nature">自然常识推理任务</span>
+中文样例
+"text": "一面墙上贴着萨克斯管、话梅、奶茶、茶叶筒四种物品的照片。已知：1号照片上的物品不属于加工食品；3号照片上的物品不属于加工食品；1号照片上的物品不属于工具；2号照片上的物品的味道是甜的；3号照片上的物品不属于饮品；1号照片上的物品不属于饮品。",
+"question": "茶叶筒在____号照片上。",
+"options": {
+            "A": "1",
+            "B": "2",
+            "C": "3",
+            "D": "4"
+        },
+"answer": ["C"],
+英文样例
+"text": "On a wall pasted photos of four different items: saxophone, preserved plum, tea with milk, tea caddy. Now we know that: The item on photo No.1 is not a processed food; The item on photo No.3 is not a processed food; The item on photo No.1 is not a tool; The item on photo No.2 tastes sweet; The item on photo No.3 is not a drink; The item on photo No.1 is not a drink.",
+ "question": "Tea caddy is on photo No.____.",
+ "options": {
+            "A": "1",
+            "B": "2",
+            "C": "3",
+            "D": "4"
+        },
+ "answer": ["C"]
+【说明】物品分类：
+加工食品类：话梅、奶茶。
+非加工食品类：萨克斯管（乐器）、茶叶筒（容器）。
+根据线索“1号和3号不属于加工食品”，可知1号和 3号只能是萨克斯管或茶叶筒。
+根据线索“1号不属于工具”：茶叶筒本质是容器，属于生活工具；而萨克斯管是乐器，不属于工具。因此，1号是萨克斯管。既然1号是萨克斯管，那么剩下的3号就是茶叶筒。
 
-##### 2.2.1  <span id="ziduan">数据字段</span>
+##### 2.2.5  <span id="task_mix">融合领域常识推理任务</span>
 
-id：题目编号。每道题目都有唯一的编号，形如“rsr-数据集-数字”。rsr为任务英文retrieving spatial referents的缩写，demo和test分别代表示例集和测试集。
+###### 2.2.5.1  <span id="task_mix_space_nature">空间+自然常识推理任务</span>
+中文样例
+"text": "酒盅、百合花、葡萄酒、瑶柱、馄饨、马六种商品在三层货架上放置，货架紧靠商店南墙放置，每层两格，各放一种商品，一在东，一在西。顾客站在货架前选购商品。在描述各商品的位置关系时，约定以顾客自身左右方位为参照，即东侧商品为左，西侧商品为右。已知：馄饨在工具右下方且二者不隔层；花草是饮品的左邻；4条腿的动物在工具下一层；馄饨在花草右下方且二者隔了一层；工具在二层东侧。",
+"question": "_ 在马右边且二者同层",
+"options": {
+            "A": "瑶柱",
+            "B": "百合花",
+            "C": "葡萄酒",
+            "D": "以上选项都不是"
+        },
+"answer": ["D"]
+英文样例
+"text": "Handleless wine cup, lily, port wine, conpoy, wonton, horse, six items are placed on a three-tier shelf, which is positioned against the south wall of the store. Each tier has two sections, with one type of item placed in the east section and one in the west section. A customer is standing in front of the shelf. When describing the positional relationships of the items, it is agreed that the customer's own left and right will be used as a reference, with the east section being on the left and the west section being on the right. It is known that:\nThe wonton is located at the lower right of the tool and there is no tier between them,\nThe flower or grass is directly to the drink's left,\nThe animal with 4 legs is under the tool,\nThe wonton is located at the lower right corner of the flower or grass and there is a tier between them,\nThe tool is on the east side of the second tier.",
+"question": "_ is to the right of horse and both are on the same tier",
+"options": {
+        "A": "conpoy",
+        "B": "lily",
+        "C": "port wine",
+        "D": "None of the above"
+        },
+"answer": ["D"]
+【说明】根据已知条件，可还原货架布局：一层东侧为马，西侧为馄饨。二层东侧为酒盅，西侧为瑶柱，三层东侧为百合花，西侧为葡萄酒。正确答案“馄饨”不在选项中，因此选D。
+###### 2.2.5.2  <span id="task_mix_space_social">空间+社会常识推理任务</span>
+中文样例
+"text": "四人来到火锅店吃火锅，选了四人卡座坐下。卡座分列一张长方形桌子长边两侧，每排卡座上坐两人。面对面而坐。孙启航的前妻在孙启航的挚友同侧左边，孙启航的妹妹是孙榆琴的哥哥的左邻。孙启航是孙榆琴的哥哥，也是冯震宇的挚友。韩向秋是孙启航的前妻，也是冯震宇的前女友。",
+"question": "孙启航的妹妹和___不挨着坐",
+"options": {
+            "A": "冯震宇",
+            "B": "韩向秋",
+            "C": "孙启航",
+            "D": "孙榆琴"
+        },
+"answer": ["A","B"]
+英文样例
+"text": "Four people went to a tea restaurant to eat and chose a four-person booth. The booth is arranged along the long sides of a rectangular table, with two people sitting on each side, facing each other. Jacob Hernandez's elder sister is on Julia Brown's boyfriend's left on the same side, Jacob Hernandez's neighbor is the left neighbor of Julia Brown's neighbor.\nJulia Brown is Jacob Hernandez's neighbor, and also Donald Rodriguez's girlfriend. Mary Hernandez is Jacob Hernandez's elder sister, and also Donald Rodriguez's ex-wife.",
+        "question": "Jacob Hernandez's neighbor and ___ are not sitting next to each other",
+        "options": {
+            "A": "Donald Rodriguez",
+            "B": "Mary Hernandez",
+            "C": "Jacob Hernandez",
+            "D": "Julia Brown"
+        },
+        "answer": ["A","B"]
+【说明】根据题目描述，可以确定四人的身份：
+孙启航：孙榆琴的哥哥，冯震宇的挚友。
+孙榆琴：孙启航的妹妹（由“孙启航是孙榆琴的哥哥”可推知）。
+冯震宇：孙启航的挚友。
+韩向秋：孙启航的前妻。
+四人的空间布局为：
+一侧：韩向秋、冯震宇
+另一侧：孙榆琴、孙启航
+孙榆琴只和孙启航挨着坐，和冯震宇、韩向秋都不挨着。因此答案为A、B。
+###### 2.2.5.3  <span id="task_mix_time_nature">时间+自然常识推理任务</span>
+中文样例
+"text": "老农老赵，在1980到2000年之间一共种植过四种植物：生菜、当归、月季、腰果。每年他最多只种一种植物，且每种植物的种植时间都是连续的。已知：
+(1)老赵开始种植坚果是在老赵不再种植月季的8年后;
+(2)在1987年，老赵开始种植月季;
+(3)老赵种植月季的时间比老赵种植开黄色花的蔬菜的时间长1年；
+(4)老赵不再种植月季的时间比老赵开始种植月季晚3年；
+(5)老赵种植坚果的时长为2年；
+(6)在老赵开始种植开黄色花的坚果的2年之后，老赵不再种植开黄色花的坚果;
+(7)从1992年开始老赵种植开白色花的花草，一直到1998年;
+(8)1990年至1992年，老赵种植绿色的物品;"
+ "question": "以下选项中正确的是____",
+ "options": {
+            "A": "老赵不再种植当归和老赵开始种植生菜之间相隔8年",
+            "B": "老赵种植生菜一共2年",
+            "C": "老赵开始种植月季是在老赵不再种植当归的11年前",
+            "D": "老赵开始种植腰果是在老赵不再种植当归那年之后"
+        },
+"answer": ["A", "B","C"]
+英文样例
+"text": "Old farmer Jack has planted four kinds of crops between 1980 and 2000: lettuce、Angelica sinensis、Chinese rose、cashew nut. He can plant at most one crop each year, and the planting periods of each crop are continuous. It is known that:
+(1)Jack started planting the nut 8 years after Jack ended planting the Chinese rose;
+(2)In 1987, Jack started planting the Chinese rose;
+(3)Jack planted the Chinese rose 1 year more than Jack planted the vegetable with yellow flower;
+(4)Jack ended planting the Chinese rose 3 years after Jack started planting the Chinese rose;
+(5)Jack planted the nut and spent 2 years on it;
+(6)Jack ended planting the nut with yellow flower 2 years after Jack started planting the nut with yellow flower;
+(7)Beginning in 1992, Jack planted the flower or grass with white flower for 6 years;
+(8)Jack planted the green item from 1990 to 1992;",
+"question": "Select the correct statement(s): ____",
+"options": {
+    "A": "There is a 8 years gap between Jack started planting lettuce and Jack ended planting Angelica sinensis",
+    "B": "Jack planted lettuce and spent 2 years on it",
+    "C": "Jack started planting Chinese rose 11 years before Jack ended planting Angelica sinensis",
+    "D": "The year Jack started planting cashew nut postdates the year Jack ended planting Angelica sinensis"
+        },
+"answer": ["A", "B","C"],
+| 植物 | 开始年份 | 结束年份（不再种植的那一年） | 实际种植年份 | 时长 |
+| --- | --- | --- | --- | --- |
+| 月季 | 1987 | 1990 | 1987, 1988, 1989 | 3年 |
+| 生菜 | 1990 | 1992 | 1990, 1991 | 2年 |
+| 当归 | 1992 | 1998 | 1992, 1993, 1994, 1995, 1996, 1997 | 6年 |
+| 腰果 | 1998 | 2000 | 1998, 1999 | 2年 |
 
-instruction：说明考题目标的引导语。仅供参考，参赛队伍可自行设计提示词。
-
-text：包含参照缺失句的文本材料。
-
-interpretation：取text中的一个实体作为可能的参照物来解释方位参照的文本
-
-answer：对interpretation是否正确的判断结果。取值为“正确”或“错误”。
-
-##### 2.2.2  <span id="ziduan">数据样例</span>
-
-```json
-{
-    id: rsr-demo-1
-    instruction: 判断interpretation是否正确。请只回答“正确”或“错误”。
-    text: 李国秀熟练地用左脚夹起水瓢，从桶里舀起水，开始浇灌院子里的盆栽。不远处，丈夫张顺东单手拿着手机，跟在妻子后面，聚精会神地录制视频。一旁的昆明市东川区电子商务公共服务中心负责人陆金云小声指导：“可以绕到侧面，拍个浇花的特写。”
-    interpretation: “可以绕到侧面”是以“李国秀”为基准，确定“侧面”所指的具体方位。
-    answer: 正确
-}
-```
-
-#### 2.3  <span id="task3">空间异形同义判断</span>
-
-##### 2.3.1  <span id="ziduan">数据字段</span>
-
-id：题目编号。每道题目都有唯一的编号，形如“rse-数据集-数字”。rse为任务英文recognizing synonymous expression的缩写，demo和test分别代表示例集和测试集。
-
-instruction：说明考题目标的引导语。仅供参考，参赛队伍可自行设计提示词。
-
-text1：与text2形成对照的文本材料。
-
-text2：与text1形成对照的文本材料。
-
-interpretation：空间异形同义判断结果的释义文本。仅供参赛队伍参考。测试集没有此字段。
-
-answer：对text1和text2描述的空间场景是否相同的判断结果。取值为“相同”或“不同”。
-
-##### 2.3.2  <span id="ziduan">数据样例</span>
-
-```json
-{
-    id: rse-demo-3
-    instruction: 判断text1和text2描述的空间场景是否相同。请只回答“相同”或“不同”。
-    text1: 他穿街过巷，来到段公馆的后花园外，只听从高墙后飘出一阵笙、管、笛、萧的乐声和缠绵柔婉的《长生殿》歌声。
-    text2: 他穿街过巷，来到段公馆的后花园外，只听从高墙里飘出一阵笙、管、笛、萧的乐声和缠绵柔婉的《长生殿》歌声。
-    interpretation: 两个文本的形式差异部分是“从高墙后飘出一阵笙、管、笛、萧的乐声和缠绵柔婉的《长生殿》歌声”和“从高墙里飘出一阵笙、管、笛、萧的乐声和缠绵柔婉的《长生殿》歌声”。在“从高墙后飘出一阵笙、管、笛、萧的乐声和缠绵柔婉的《长生殿》歌声”中，歌声来自于被高墙遮挡的位置；在“从高墙里飘出一阵笙、管、笛、萧的乐声和缠绵柔婉的《长生殿》歌声”中，歌声来自于被高墙围起来的位置，这个位置被高墙遮挡。因此，两个句子都可以表示歌声来自于被高墙遮挡的位置的空间场景，text1和text2描述的空间场景相同。答案：【相同】。
-    answer: 相同
-}
-```
-
-#### 2.4  <span id="task4">中文空间方位关系推理</span>
-
-##### 2.4.1  <span id="ziduan">数据字段</span>
-
-id：题目编号。每道题目都有唯一的编号，形如“spr-zh-数据集-数字”。spr为任务英文spatial position reasoning的缩写，train, dev, test分别代表训练集, 验证集和测试集。
-
-instruction：说明考题目标的引导语。通过引导语可区分单选题（一个正确答案）和多选题（两个或两个以上正确答案）。仅供参考，参赛队伍可自行设计提示词。
-
-text：包含情景描述和已知条件的文本材料。
-
-question：机器需要回答的推理问题。形式上是一个句中有括号的陈述句。 
-    
-options：题目选项。字典，键-值对为“选项字母-选项内容”，有四个键-值对。选项字母为A、B、C、D。 
-    
-answer：推理问题的答案。数组，元素是选项字母。例如，["A"]表示机器选择option的A选项作为答案。测试集没有此字段。
-
-##### 2.4.2  <span id="ziduan">数据样例</span>
-
-```json
-{
-    id: spr-zh-train-0
-    instruction: 题目是多选题，有两个或两个以上的正确答案。答案选项必须与标准答案完全一致才能得分。请逐步思考，并最终输出答案选项。
-    text: 赵志敬、谭处端、郝大通、孙不二、刘处玄、王处一六位道士在终南山重阳宫内盘腿席地打坐，围成一个圆圈，修炼内功，六人的位置恰好形成一个正六边形。六人都面朝外背对圆心而坐。任意相邻两人之间的间距相等，大约为一米。已知： 
-    (1)王处一在谭处端右侧紧邻位置； 
-    (2)郝大通在孙不二逆时针方向第三个位置； 
-    (3)刘处玄与王处一正背对；
-    (4)赵志敬在孙不二右边数起第一个位置； 
-    (5)从郝大通的左边数起第五个位置是谭处端。
-    question: 刘处玄与()之间隔着其他实体。
-    options: {A:王处一, 
-             B:郝大通, 
-             C:孙不二, 
-             D:赵志敬} 
-    answer: [A, C]
-}
-```
-
-说明：
-
-- 文本描绘了一个正六边形的围坐场景，六个实体以背对中心的状态位于正六边形的顶点。根据文本给出的已知条件，可以推理出每个实体的位置，可知：刘处玄与郝大通和赵志敬相邻。因此，刘处玄与其他三个实体之间隔着实体。
+因此答案选A、B、C。
+###### 2.2.5.4  <span id="task_mix_time_social">时间+社会常识推理任务</span>
+中文样例
+"text": "已知：周宁馨是杨威的邻居，也是朱乐行的下属。朱丹青是杨威的前妻，也是朱乐行的女儿。朱丹青的父亲、杨威的前妻、周宁馨的邻居和杨威的邻居四个人喜欢每星期定时播放的不同电视节目:
+(1)在杨威的前妻收看《脱口秀大会》的6天之后，杨威的邻居收看《体育新闻》;
+(2)周四，杨威的前妻收看《脱口秀大会》;
+(3)在杨威的前妻收看《脱口秀大会》之后1天，朱丹青的父亲收看《热点直播间》;
+(4)在杨威的邻居收看《体育新闻》之后3天，周宁馨的邻居收看《越战越勇》",
+        "question": "在杨威收看《越战越勇》之后____，周宁馨收看《体育新闻》",
+        "options": {
+            "A": "1天",
+            "B": "4天",
+            "C": "2天",
+            "D": "3天"
+        },
+        "answer": ["B"],
+英文样例
+"text": "It is known that: Ethan Garcia is Martha Garcia's dad, and also Ralph Miller's friend. Mary Martin is Ethan Garcia's teacher, and also Ralph Miller's subordinate. Ethan Garcia's friend, Ethan Garcia's teacher, Martha Garcia's dad, and Ethan Garcia's daughter like different TV shows that are broadcasted at fixed times every week:
+(1)6 days after Ethan Garcia's teacher watches The Late Show with Stephen Colbert, Ethan Garcia's daughter watches SportsCenter;
+(2)When it's Thursday, Ethan Garcia's teacher watches The Late Show with Stephen Colbert;
+(3)Ethan Garcia's friend watches NBC Nightly News 1 day after Ethan Garcia's teacher watches The Late Show with Stephen Colbert;
+(4)3 days after Ethan Garcia's daughter watches SportsCenter, Martha Garcia's dad watches Jeopardy!",
+        "question": "____ after Ethan Garcia watches Jeopardy!, Martha Garcia watches SportsCenter",
+        "options": {
+            "A": "1 day",
+            "B": "4 days",
+            "C": "2 days",
+            "D": "3 days"
+        },
+        "answer": ["B"]
+【说明】
+杨威的前妻：即朱丹青。
+杨威的邻居：即周宁馨（题目已知“周宁馨是杨威的邻居”）。
+周宁馨的邻居：根据邻居关系的相互性，周宁馨的邻居就是杨威。
+朱丹青的父亲：即朱乐行。
+根据线索(1)，“在杨威的前妻收看《脱口秀大会》的6天之后，杨威的邻居（周宁馨）收看《体育新闻》”。周四 + 6天 = 周三。周宁馨收看《体育新闻》= 周三。
+根据线索(4)，“在杨威的邻居（周宁馨）收看《体育新闻》之后3天，周宁馨的邻居（杨威）收看《越战越勇》”。周三 + 3天 = 周六。杨威收看《越战越勇》= 周六。
+周六到周三经过4天，因此答案选B。
 
 
-#### 2.5  <span id="task5">英文空间方位关系推理</span>
 
-##### 2.5.1  <span id="ziduan">数据字段</span>
 
-id：题目编号。每道题目都有唯一的编号，形如“spr-en-数据集-数字”。spr为任务英文spatial position reasoning的缩写，train, dev, test分别代表训练集, 验证集和测试集。
 
-instruction：说明考题目标的引导语。通过引导语可区分单选题（一个正确答案）和多选题（两个或两个以上正确答案）。仅供参考，参赛队伍可自行设计提示词。
 
-text：包含情景描述和已知条件的文本材料。
 
-question：机器需要回答的推理问题。形式上是一个句中有括号的陈述句。 
-    
-options：题目选项。字典，键-值对为“选项字母-选项内容”，有四个键-值对。选项字母为A、B、C、D。 
-    
-answer：推理问题的答案。数组，元素是选项字母。例如，["A"]表示机器选择option的A选项作为答案。测试集没有此字段。
 
-##### 2.5.2  <span id="ziduan">数据样例</span>
+[中文样例]
+"text": "王处一、谭处端、丘处机、刘处玄、王重阳、周伯通六位道士在终南山重阳宫内盘腿席地打坐，围成一个圆圈，修炼内功，六人的位置恰好形成一个正六边形。六人都面朝外背对圆心而坐。任意相邻两人之间的间距相等，大约为一米。已知：丘处机在王处一顺时针方向第一个位置，谭处端在刘处玄右边数起第三个位置，谭处端在王重阳顺时针方向第二个位置，周伯通的右边接着就是谭处端，王处一的右边起第三个就是王重阳。"
+"question": "周伯通在___左侧范围内。",
+"options": {
+            "A": "王处一",
+            "B": "刘处玄",
+            "C": "丘处机",
+            "D": "以上选项都不是"
+        }
+"answer": ["A"]
 
-```json
-{
-    id: spr-en-train-0
-    instruction：The question is multiple-choice with more than one correct answers. Answer choices must exactly match the gold answer to be considered correct. Please think step by step and finally output the answer choices.
-    text：Michael, Mary, Jennifer, William, John, Robert, ——these six Taoist priests are seated cross-legged on the ground inside the Chongyang Palace on Zhongnan Mountain, arranged in a circle as they practice internal martial arts. The positions of the six priests form a perfect hexagon. Each person is facing outward, with their backs to the center of the circle. The distance between any two adjacent priests is equal, approximately one meter. It is known that: 
-    (1)Mary is directly to the right of Robert;
-    (2)Jennifer is in the third position counterclockwise from William; 
-    (3)John and Robert are back-to-back;
-    (4)Michael occupies the first position to the right of William;
-    (5)Mary occupies the fifth position to the left of Jennifer. 
-    question：There are other people between John and (). 
-    options：{A:Robert, 
-             B:Jennifer, 
-             C:William, 
-             D:Michael} 
-    answer：[A, C]
-}
-```
+[英文样例]
+"text": "Robert, Mary, Patricia, John, James, David, —these six Taoist priests are seated cross-legged on the ground inside the Chongyang Palace on Zhongnan Mountain, arranged in a circle as they practice internal martial arts. The positions of the six priests form a perfect hexagon. Each priest is facing outward, with their backs toward the center of the circle. The distance between any two adjacent priests is equal, approximately one meter. It is known that: Patricia occupies the first position clockwise from Robert; Mary occupies the third position to the right of John; Mary occupies the second position clockwise from James; Mary is directly to the right of David; James occupies the third position to the right of Robert. ",
+"question": "David is situated in the area to ___'s left."
+"options": {
+     "A": "Robert",
+     "B": "John",
+     "C": "Patricia",
+     "D": "None of the above"
+     }
+"answer": ["A"]
 
-说明：
 
-- 英文例题和中文例题是对应关系，除了实体的名称不同，空间场景以及已知条件均相同。根据文本给出的已知条件，可以推理出每个实体的位置，可知：John 与 Jennifer 和 Michael 相邻。因此，John 与其他三个实体之间隔着实体。
+#### 2.3  <span id="distribution">数据概况</span>
 
-#### 2.6  <span id="distribution">数据概况</span>
+本数据集提供的训练集和验证集共计6800题。具体分布如下表所示：
 
-总数据量为 18,423 题。空间信息正误判断、空间参照实体判断、空间异形同义判断任务在多种不同类型的真实语料上进行改写工作，包括：报刊语料、文学作品语料、中小学课本语料、交通事故描述文本、人体动作文本、地理百科文本。空间方位关系推理任务则是运用基于知识库的数据合成方法生成的高质量合成数据。数据分布如下：
+| 领域 | 中文 | 英文 | 总计 |
+| --- | --- | --- | --- |
+| **单领域** | | | |
+| 空间 | 600 | 600 | 1200 |
+| 时间 | 600 | 600 | 1200 |
+| 社会 | 600 | 600 | 1200 |
+| 自然 | 600 | 600 | 1200 |
+| **融合领域** | | | |
+| 空间+自然 | 250 | 250 | 500 |
+| 空间+社会 | 250 | 250 | 500 |
+| 时间+自然 | 250 | 250 | 500 |
+| 时间+社会 | 250 | 250 | 500 |
 
-<table class="table table-bordered">
-<thead>
-<tr>
-<th>子任务</th>
-<th>示例集</th>
-<th>训练集</th>
-<th>验证集</th>
-<th>测试集</th>
-<th>数据总量</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>空间信息正误判断</td>
-<td>20</td>
-<td>0</td>
-<td>0</td>
-<td>3,500</td>
-<td>3,520</td>
-</tr>
-<tr>
-<td>空间参照实体判断</td>
-<td>20</td>
-<td>0</td>
-<td>0</td>
-<td>1,763</td>
-<td>1,783</td>
-</tr>
-<tr>
-<td>空间异形同义判断</td>
-<td>20</td>
-<td>0</td>
-<td>0</td>
-<td>1,100</td>
-<td>1,120</td>
-</tr>
-<tr>
-<td>中文空间方位关系推理</td>
-<td>0</td>
-<td>2,000</td>
-<td>500</td>
-<td>3,500</td>
-<td>6,000</td>
-</tr>
-<tr>
-<td>英文空间方位关系推理</td>
-<td>0</td>
-<td>2,000</td>
-<td>500</td>
-<td>3,500</td>
-<td>6,000</td>
-</tr>
-<td>合计</td>
-<td>60</td>
-<td>4,000</td>
-<td>1,000</td>
-<td>13,363</td>
-<td>18,423</td>
-</tr>
-</tbody></table>
 
 ### <center>3.  <span id="eval">评价标准</span></center>
-参赛队伍的排名依据为两大类任务的综合得分 S ，S1 代表空间语言能力类评测任务的得分，S2 代表空间推理能力类评测任务的得分，Acc<sub>i</sub> 代表各子任务的准确率（Accuracy，Acc）。公式如下：
+SCoRE2026使用准确率（Accuracy, ACC）作为评价指标和排名依据，公式如下：
+ACC = 命中正确答案的比赛题数 / 比赛题目总数
 
-![](images/score.png)
 
 ### <center>4.  <span id="time">评测赛程</span></center>
-目前拟定的赛程安排如下：
-<table class="table table-bordered">
-<thead>
-<tr>
-<th>时间</th>
-<th>事项</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2月20日~4月20日</td>
-<td>开放报名</td>
-</tr>
-<tr>
-<td>3月26日</td>
-<td>发布语言能力任务的示例集</td>
-</tr>
-<tr>
-<td>3月30日</td>
-<td>发布推理能力任务的训练集、验证集和测试集</td>
-</tr>
-<tr>
-<td>4月1日</td>
-<td>发布语言能力任务的测试集，开放结果提交</td>
-</tr>
-<tr>
-<td>5月18日</td>
-<td>测试结果提交截止</td>
-</tr>
-<tr>
-<td>5月21日</td>
-<td>参赛模型提交截止</td>
-</tr>
-<tr>
-<td>5月25日</td>
-<td>评测论文初稿提交截止</td>
-</tr>
-<tr>
-<td>6月5日</td>
-<td>公布最终排名和获奖名单</td>
-</tr>
-<tr>
-<td>6月15日</td>
-<td>评测论文终稿提交截止</td>
-</tr>
-<tr>
-<td>6月20日</td>
-<td>评测论文录用通知</td>
-</tr>
-<tr>
-<td>8月</td>
-<td>评测研讨会</td>
-</tr>
-</tbody></table>
+| 时间 | 事项 |
+| --- | --- |
+| 2月20日-4月14日 | 开放报名 |
+| 3月1日 | 发布训练集 |
+| 4月14日 | 发布验证集和测试集，开放结果提交 |
+| 5月15日 | 测试结果提交截止 |
+| 5月21日 | 参赛模型提交截止 |
+| 5月30日 | 评测论文初稿提交截止 |
+| 5月31日 | 公布最终排名和获奖名单 |
+| 6月15日 | 评测论文终稿提交截止 |
+| 6月20日 | 评测论文录用通知 |
+| 8月 | 评测研讨会 |
+
 
 
 ### <center>5.  <span id="award">奖项设置</span></center>
 
-评测奖金由华为公司赞助。本次评测将评选出如下奖项：
-
-一等奖拟定 0-1名 ，奖金池共 12,000。
-
-二等奖拟定 0-2名 ，奖金池共 12,000。
-
-三等奖拟定 0-4名 ，奖金池共 12,000。
-
+本次评测将评选出如下奖项：
+一等奖拟定0-1名。
+二等奖拟定0-2名。
+三等奖拟定0-4名。
 由中国中文信息学会为本次评测获奖队伍提供荣誉证书。
+
 
 ### <center>6.  <span id="otherinfo">报名方式</span></center>
 
-请仔细阅读《[第五届空间语义理解评测 SpaCE2025 参赛协议](https://github.com/PKU-SpaCE/SpaCE2025/tree/main/agreements/Agreement.md)》和《[第五届空间语义理解评测 SpaCE2025 数据集使用许可](https://github.com/PKU-SpaCE/SpaCE2025/tree/main/agreements/LICENSE.md)》，然后点击进入 [报名链接](https://docs.qq.com/form/page/DSWpBdE9FUWFOUkZa)
+请仔细阅读《[第一届常识推理评测 SCoRE2026 参赛协议](https://github.com/PKU-SpaCE/SCoRE2026/tree/main/agreements/Agreement.md)》和《[第一届常识推理评测 SCoRE2026 数据集使用许可](https://github.com/PKU-SpaCE/SCoRE2026/tree/main/agreements/LICENSE.md)》，然后点击进入 [报名链接](https://docs.qq.com/form/page/DVURKQ3NGcmtEZmxu)
 
-### <center>7.  <span id="rules">赛事规则</span></center>
+### <center>7.  <span id="rules">评测委员会</span></center>
 
-一、参赛模型要求：
+单位：北京大学、华为技术有限公司
+主席：詹卫东、穗志方
+工作人员：胡楠，肖力铭，王悦，秦宇航，李政，马敬原，杨奕欣，邓思锐，崔香，蔡奇栩，姜秀旻，丁锦坤，张子涵，王希豪，孙春晖，邢丹
 
-（1）空间语言能力类评测任务（3个子任务）：可通过设计提示词或微调的方式基于**参数量不大于7B的大语言模型**参赛。
-
-（2）空间推理能力类评测任务（2个子任务）：**必须通过微调[DeepSeek-R1-Distill-Qwen-7B](https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B)的方式参赛**。
-
-二、以下行为将**取消获奖资格**：
-
-（1）在模型训练、微调阶段使用验证集或测试集的数据。例如，用测试集生成伪标签数据进行数据增强；
-
-（2）将验证集或测试集的数据作为提示词示例使用；
-
-（3）测试集提交结果为人工作答结果；
-
-（4）使用SpaCE2025以外的其他数据集；
-
-（5）参赛模型不符合要求；
-
-（6）最终成绩无法复现。
-
-三、请将所有子任务的提交结果放于一个文件中。文件规定为jsonl格式，每行一个json对象，每个json对象至少包括id字段和answer字段。以【<span style="color:var(--notice-red)">队伍名称-test-1<sub>指第几次提交</sub>-日期.jsonl</span>】给文件命名，将结果文件发送到 lmxiao@stu.pku.edu.cn。
-
-四、参赛队伍每日最多可提交3次测试集结果，最终成绩取所有提交结果中的最高得分。主办方将实时返回每次提交的得分，并每日更新一次排行榜。提交通道关闭后再提交的结果不计入排名。
-
-五、参赛队伍须向主办方提交可复现的模型、代码和提示词。鉴于大语言模型输出的不稳定性，复现结果允许在2%以内浮动。
-
-六、最终解释权归主办方所有。
 
