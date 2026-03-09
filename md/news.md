@@ -3,8 +3,9 @@
 
 ## 📮 最新消息
 
-<p class="text-center">本页面用于发布关于 <strong>第五届空间语义理解评测<small>（SpaCE2025）</small></strong> 的最新消息，<br/><span style="color:var(--notice-red)"><strong>请各位参赛者保持关注本页面，了解评测最新动态和要求</strong></span>，谢谢!</p>
+<p class="text-center">本页面用于发布关于 <strong>第一届常识推理评测<small>（SCoRE2026）</small></strong> 的最新消息，<br/><span style="color:var(--notice-red)"><strong>请各位参赛者保持关注本页面，了解评测最新动态和要求</strong></span>，谢谢!</p>
 
+<!--
 <br/>
 
 - `5月 31日` 比赛结果公布：
@@ -41,6 +42,8 @@
   - <a href="https://2030nlp.github.io/SpaCE2022/" target="_blank">第二届中文空间语义理解评测（SpaCE2022）</a >
   - <a href="https://2030nlp.github.io/SpaCE2023/" target="_blank">第三届中文空间语义理解评测（SpaCE2023）</a >
   - <a href="https://2030nlp.github.io/SpaCE2024/" target="_blank">第四届中文空间语义理解评测（SpaCE2024）</a >
+
+-->
 
 <hr/>
 <p class="text-center">最后更新于<strong>2025年5月31日</strong></p>
