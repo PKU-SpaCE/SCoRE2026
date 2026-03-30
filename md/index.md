@@ -15,9 +15,10 @@
 >     - <a href="#distribution">数据概况</a>
 > - <a href="#eval">评价标准</a>
 > - <a href="#time">评测赛程</a>
+> - <a href="#rules">评测规则</a>
 > - <a href="#award">奖项设置</a>
 > - <a href="#otherinfo">其他信息</a>
-> - <a href="#rules">评测委员会</a>
+> - <a href="#committee">评测委员会</a>
 
 ### <center>1.  <span id="content">任务内容</span></center>
 
@@ -337,7 +338,7 @@ ACC = 命中正确答案的比赛题数 / 比赛题目总数
 | 2月20日-4月14日 | 开放报名 |
 | 3月31日 | 发布训练集 |
 | 3月31日 | 发布测试集，开放结果提交 |
-| 6月1日 | 测试结果提交截止 |
+| 5月15日 | 测试结果提交截止 |
 | 6月6日 | 参赛模型提交截止 |
 | 6月10日 | 评测论文初稿提交截止 |
 | 6月12日 | 公布最终排名和获奖名单 |
@@ -345,9 +346,27 @@ ACC = 命中正确答案的比赛题数 / 比赛题目总数
 | 7月10日 | 评测论文录用通知 |
 | 8月 | 评测研讨会 |
 
+### <center>5.  <span id="rules">评测规则</span></center>
+#### 一、参赛模型要求：
+1. Dense 模型
+参赛模型总参数量不得超过 8B。
+2. MoE 模型
+参赛模型总参数量不得超过 30B；
+在标准推理配置下，每个 token 的激活参数量不得超过 3B。
+其中：
+“总参数量”指模型全部参数之和；
+“激活参数量”指单个 token 在一次前向传播中实际参与计算的参数量总和。
+#### 二、以下行为将取消获奖资格：
+(1) 在模型训练、微调阶段使用验证集或测试集的数据。例如，用测试集生成伪标签数据进行数据增强；
+(2) 将验证集或测试集的数据作为提示词示例使用；
+(3) 测试集提交结果为人工作答结果；
+(4) 使用SpaCE2025以外的其他数据集；
+(5) 参赛模型不符合要求；
+(6) 最终成绩无法复现。
+#### 三、提交方式
+通过[SCoRE2026线上自动评测系统](http://47.97.2.176:5000/)提交json文件，自动评分。
 
-
-### <center>5.  <span id="award">奖项设置</span></center>
+### <center>6.  <span id="award">奖项设置</span></center>
 
 本次评测将评选出如下奖项：
 一等奖拟定0-1名。
@@ -356,11 +375,11 @@ ACC = 命中正确答案的比赛题数 / 比赛题目总数
 由中国中文信息学会为本次评测获奖队伍提供荣誉证书。
 
 
-### <center>6.  <span id="otherinfo">报名方式</span></center>
+### <center>7.  <span id="otherinfo">报名方式</span></center>
 
 请仔细阅读《[第一届基于情景的常识推理评测 SCoRE2026 参赛协议](https://github.com/PKU-SpaCE/SCoRE2026/tree/main/agreements/Agreement.md)》和《[第一届基于情景的常识推理评测 SCoRE2026 数据集使用许可](https://github.com/PKU-SpaCE/SCoRE2026/tree/main/agreements/LICENSE.md)》，然后点击进入 [报名链接](https://docs.qq.com/form/page/DVURKQ3NGcmtEZmxu)
 
-### <center>7.  <span id="rules">评测委员会</span></center>
+### <center>8.  <span id="committee">评测委员会</span></center>
 
 单位：北京大学、华为技术有限公司
 主席：詹卫东、穗志方
